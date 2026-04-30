@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/StylizedFurniturePack/Materials.meta
 guid: 214f26aad9ff4d042914dd9e9683e51b
+========
+guid: 278b6fd071ad6ac42888e3bc213ab389
+>>>>>>>> b4b8727c1d8326a6a6a25cc8111e051970f30f64:Assets/StylizedFurniturePack.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

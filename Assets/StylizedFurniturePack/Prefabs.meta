@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/StylizedFurniturePack/Prefabs.meta
 guid: 060f519cdb506ab48bc1f09006eaff5c
+========
+guid: 0999fc66dab79aa49a9065fc7171ddda
+>>>>>>>> b4b8727c1d8326a6a6a25cc8111e051970f30f64:Assets/StylizedFurniturePack/Models.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
