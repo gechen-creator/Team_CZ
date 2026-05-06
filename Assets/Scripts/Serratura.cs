@@ -9,6 +9,8 @@ public class Serratura : MonoBehaviour
 
     private List<PulsanteColorato.TipoPulsante> sequenzaPremuta;
 
+    public GameObject PortaCamera;
+
     /// <summary>
     /// Controlla che la sequenzaPremuta sia uguale alla sequenza memorizzata
     /// </summary>
@@ -38,6 +40,24 @@ public class Serratura : MonoBehaviour
     public void Premuto(PulsanteColorato.TipoPulsante tipoPulsante)
     {
         sequenzaPremuta.Add(tipoPulsante);
+        Debug.Log("Aggiunto:  " + tipoPulsante);
+
+        if (sequenzaPremuta.Count == sequenza.Count)
+        {
+            if (ControllaSequenza())
+            {
+                Debug.Log ("La sequenza è corretta! La serratura è aperta ");
+
+                PortaCamera.transform.Rotate(0, 180, 0);
+
+            }
+
+            else
+            {
+                Debug.Log("La sequenza è incorretta! Riprova!");
+                sequenzaPremuta.Clear ();
+            }
+        }
     }
 }
 

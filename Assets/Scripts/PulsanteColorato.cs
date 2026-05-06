@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PulsanteColorato : MonoBehaviour
@@ -10,15 +11,24 @@ public class PulsanteColorato : MonoBehaviour
         Verde,
     }
     public TipoPulsante tipoPulsante;
+    private Serratura serratura;
+   
 
-    Serratura serratura;
     private void Start()
     {
         serratura = GetComponentInParent<Serratura>();
+
+        if (serratura == null )
+        {
+            Debug.LogError("Serratura no trovata");
+        }
     }
 
     public void Interact()
     {
-        serratura.Premuto(tipoPulsante);
+        if (serratura != null)
+        {
+            serratura.Premuto(tipoPulsante);
+        }
     }
 }
