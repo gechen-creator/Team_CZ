@@ -1,17 +1,12 @@
 using UnityEngine;
 using TMPro;
 
-public class KeypadController : MonoBehaviour
-{
-    [Header("UI Elements")]
-    [SerializeField] private TMP_Text displayText;
-
-    [Header("Settings")]
-    [SerializeField] private string correctCode = "3410";
+public class ColorBtn : MonoBehaviour
+{ 
+    [SerializeField] private TMP_Text displayTextt;
+    [SerializeField] private string correctCode = "GRBY";
     [SerializeField] private int maxCodeLength = 4;
-
-    [Header("References")]
-    [SerializeField] private DoorController door; 
+    [SerializeField] private DoorBController door;
 
     private string currentInput = "";
 
@@ -20,29 +15,29 @@ public class KeypadController : MonoBehaviour
         UpdateDisplay();
     }
 
-    
-    public void PressNumber(string number)
+
+    public void PressColor(string color)
     {
         if (currentInput.Length < maxCodeLength)
         {
-            currentInput += number;
+            currentInput += color;
             UpdateDisplay();
         }
     }
 
-    
+
     public void ClearInput()
     {
         currentInput = "";
         UpdateDisplay();
     }
 
-    
+
     public void CheckCode()
     {
         if (currentInput == correctCode)
         {
-            displayText.text = "ACCESS GRANTED";
+            displayTextt.text = "ACCESS GRANTED";
 
             if (door != null)
             {
@@ -52,14 +47,14 @@ public class KeypadController : MonoBehaviour
         }
         else
         {
-            displayText.text = "WRONG CODE";
+            displayTextt.text = "WRONG CODE";
             Invoke(nameof(ResetKeypad), 1.5f);
         }
     }
 
     private void UpdateDisplay()
     {
-        displayText.text = currentInput;
+        displayTextt.text = currentInput;
     }
 
     private void ResetKeypad()
@@ -67,4 +62,3 @@ public class KeypadController : MonoBehaviour
         ClearInput();
     }
 }
-
