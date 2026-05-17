@@ -3,14 +3,9 @@ using TMPro;
 
 public class KeypadController : MonoBehaviour
 {
-    [Header("UI Elements")]
     [SerializeField] private TMP_Text displayText;
-
-    [Header("Settings")]
     [SerializeField] private string correctCode = "3410";
     [SerializeField] private int maxCodeLength = 4;
-
-    [Header("References")]
     [SerializeField] private DoorController door; 
 
     private string currentInput = "";
